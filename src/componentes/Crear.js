@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import { guardarStorage } from '../helpers/GuardarStorage'
 
 export const Crear = () => {
 
@@ -17,7 +18,7 @@ export const Crear = () => {
         // Conseguir datos del formulario
         let target = e.target
         let titulo = target.titulo?.value
-        let descripcion = target.Descripcion?.value
+        let descripcion = target.descripcion?.value
 
         // Crear objeto de la pelicula 
         let pelicula = {
@@ -27,6 +28,9 @@ export const Crear = () => {
         }
 
         setPeliculaState(pelicula)
+
+        // agregar listado de peliculas a localStorage del navegador. 
+        guardarStorage("pelis", pelicula)
 
     }
 
@@ -40,10 +44,10 @@ export const Crear = () => {
 
         <form onSubmit={conseguirDatosForm}>
 
-            <input type="text"  name="titulo" placeholder="Titulo" />
+            <input type="text" id="titulo" name="titulo" placeholder="Titulo" />
 
             <textarea 
-                name="description" placeholder="Descripción">
+                name="descripcion" id="descripcion" placeholder="Descripción">
             </textarea>
 
             <input type="submit" id="save" value="Guardar" />
