@@ -36,9 +36,7 @@ export const Crear = ({setListadoState}) => {
         })
 
         // agregar listado de peliculas a localStorage del navegador. 
-        guardarStorage("pelis", pelicula)
-
-       
+        guardarStorage("pelis", pelicula)       
 
     }
 

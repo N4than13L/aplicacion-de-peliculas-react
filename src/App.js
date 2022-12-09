@@ -3,7 +3,7 @@ import './App.css';
 import { Listado } from './componentes/Listado';
 import { Buscador } from './componentes/Buscador';
 import { Crear } from './componentes/Crear';
-import {useState} from "react"
+import { useState } from "react"
 
 function App() {
   const [listadoState, setListadoState] = useState([])
@@ -31,7 +31,7 @@ function App() {
       {/* Contenido principal */}
       <section id="content" className="content">
         {/* aqui van las peliculas */}
-          <Listado listadoState={listadoState} setListadoState={setListadoState}/>
+          <Listado listadoState={listadoState} setListadoState={setListadoState} />
       </section>
 
       {/* Barra lateral */}
