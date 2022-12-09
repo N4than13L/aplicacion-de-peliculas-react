@@ -17,12 +17,12 @@ export const Crear = ({setListadoState}) => {
 
         // Conseguir datos del formulario
         let target = e.target
-        let titulo = target.titulo?.value
-        let descripcion = target.descripcion?.value
+        let titulo = target.titulo.value
+        let descripcion = target.descripcion.value
 
         // Crear objeto de la pelicula 
         let pelicula = {
-            id: new Date().getDate(),
+            id: new Date().getTime(),
             titulo,
             descripcion
         }
@@ -31,7 +31,7 @@ export const Crear = ({setListadoState}) => {
         setPeliculaState(pelicula)
 
         // Actualizar estado del listado principal 
-        setListadoState(elementos =>{
+        setListadoState(elementos => {
             return [...elementos, pelicula]
         })
 

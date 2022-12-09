@@ -1,10 +1,13 @@
 import React from 'react'
 import { useState } from 'react'
 import { useEffect } from 'react'
+import { Editar } from './Editar'
 
 export const Listado = ({listadoState, setListadoState}) => {
 
   // const [listadoState, setListadoState] = useState([])
+
+  const [editar, setEditar] = useState(0)
 
   useEffect(() => {
     console.log("Componente de listado de peliculas");
@@ -44,13 +47,20 @@ export const Listado = ({listadoState, setListadoState}) => {
               <h3 className="title">{peli.titulo}</h3>
               <p className="description">{peli.descripcion}</p>
 
-              <button className="edit">Editar</button>
+              <button className="edit" onClick={ () => setEditar(peli.id) } >Editar</button>
               <button className="delete" onClick={ ()=> borrarPelicula(peli.id)}>Borrar</button>
+              
+              {/* Funcionalidad para editar */}
+              {editar === peli.id && (
+                <Editar peli={peli} conseguirPeliculas={conseguirPeliculas} setEditar={setEditar} setListadoState={setListadoState} />
+              )}
+
             </article>
           )
         })
 
         : <h2>No hay peliculas para mostrar.</h2>
+
         }
     </>
   )
