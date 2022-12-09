@@ -2,9 +2,9 @@ import React from 'react'
 import { useState } from 'react'
 import { useEffect } from 'react'
 
-export const Listado = () => {
+export const Listado = ({listadoState, setListadoState}) => {
 
-  const [listadoState, setListadoState] = useState([])
+  // const [listadoState, setListadoState] = useState([])
 
   useEffect(() => {
     console.log("Componente de listado de peliculas");
