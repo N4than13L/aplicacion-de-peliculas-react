@@ -5,14 +5,14 @@ export const guardarStorage = (clave, elemento) => {
     // Comprobar si es un array.
     if(Array.isArray(elementos)){
         // Agregar en el localStorage. 
-        elementos.push(elementos)
+        elementos.push(elemento)
     }else{
         // Crear array con la peli nueva.
-        elementos = [elementos] 
+        elementos = [elemento] 
     }
 
     // Guardar en el localStorage.
-    localStorage.setItem(clave, JSON.stringify([elementos]))
+    localStorage.setItem(clave, JSON.stringify([elemento]))
 
     // Devolver el objeto. 
     return elemento
