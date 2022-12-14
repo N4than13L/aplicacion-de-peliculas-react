@@ -1,4 +1,3 @@
-import logo from './logo.svg';
 import './App.css';
 import { Listado } from './componentes/Listado';
 import { Buscador } from './componentes/Buscador';
@@ -37,7 +36,7 @@ function App() {
       {/* Barra lateral */}
       <aside className="lateral">
         <Buscador listadoState={listadoState} setListadoState={setListadoState}/>
-        
+
         <Crear setListadoState={setListadoState}/>
       </aside>
 
